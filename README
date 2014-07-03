@@ -1,0 +1,12 @@
+libzeke: a high-level zookeeper library built around the Apache Portable Runtime to facilitate rapid development of fast dependency-light applications.
+
+- NOTE: The "public" API exposed via libzeke.h and addl header files installed is currently incomplete and
+        needs to be audited before it can be considered viable. Currently all zeke tools require additional private
+        header files.
+
+zklock: a utility built with libzeke that can perform locking via zookeeper and execute a command-line only while the lock is held.
+
+zkelection: a utility built with libzeke that can examine solr-style election nodes, display the current election winner and "clean" duplicate/redundant election ephemeral nodes (caused by a solr4 bug).
+
+
+zkjobs: see README in the zkjobs subdir, but basically this is a distributed job batching system using zookeeper.

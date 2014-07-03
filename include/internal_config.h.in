@@ -1,0 +1,15 @@
+/* include/internal_config.h */
+/* libzeke internal configuration, not required for external tool compilation */
+
+#ifndef _ZEKE_INTERNAL_CONFIG_H
+#define _ZEKE_INTERNAL_CONFIG_H
+
+#ifndef _LIBZEKE_CONFIG_H
+#include "libzeke.h"
+#endif
+
+#ifdef LIBZEKE_USE_LIBEVENT
+#define LIBZEKE_LIBEVENT_VERSION "@LIBEVENT_VERSION@"
+#endif
+
+#endif /* _ZEKE_INTERNAL_CONFIG_H */

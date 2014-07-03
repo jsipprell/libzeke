@@ -1,0 +1,53 @@
+[ zkjobs ]
+
+
+Summary
+
+A distributed job batch processing system which uses Apache Zookeeper and two
+of the zookeeper distributed processing primitives/algrothims to coordinate
+one or a great many nodes.
+
+
+Description
+
+Like most systems which rely on Zookeeper for coordination, zkjobs is
+completely peer-to-peer.  There are no master/slave relationships; each node
+choose it's level of participation and can be configured to handle a maximum
+transaction level. Zookeeper is used in two funadmental ways:
+
+  1. To store all jobs pending for a givenn "jobq" as a FIFO (First In-First
+     Out).
+
+  2. To coordinate all nodes involved in the distributed processing cluster
+     such that no job will get successfully processed by more than a single
+     node.
+
+zkjobs consists of three programs: A daemon, zkjobd, that must be run on each
+partcipating node a client tool for submitting new jobs (zkjobc) and an
+adminsrative tool (zkjobq).  These components are part of a common code-base
+which is written entirely in ISO standard C.  The various compontents are all
+single-threaded and use an event-driven I/O model, although there are some
+caveats based on dependenices.
+
+There are three libaries dependencies, two of them absolute requirements while
+the third is optiona:
+
+  1. The Zookeeper C single-trheaded API libarry. This should come bundled
+     with your version of Zookeeper although it may not be entirely
+     immediately obvious becase the Zookeeper applications itself is written
+     in java. Specification 'libzookeeper_st.a' or 'libzookeeper_st.so' is
+     required (the single-threaded library). zkjobs will NOT work correctly
+     with the multithreaded library, but this doesn't matter much as zkjobs
+     isn't multithreaded.
+
+  2. The Apache Portable Runtime Version 1.4.5 or newer. This is a standard C
+     application library which is practically as common as libc or glib.
+
+  3. (Optional) libevent 2.0.0 or newer. While this is optional, it is *highly
+     recommended. zkjobd will work fine without it, but if zkjobd has been
+     built against this robust event I/O framework it permits quite a bit of
+     additional flexibility with regard to development and thus certain
+     features of zkjobd depend on libevent (automatic email of error output
+     from jobs, job wrappers and wrapper scripts, custom command pipelines
+     without allowing shell jobs, etc).
+

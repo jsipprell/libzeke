@@ -1,0 +1,17 @@
+#ifndef _LIBZEKE_VERSION_H
+
+/* libzeke major api version number */
+#define LIBZEKE_MAJOR_VERSION @LIBZEKE_API_VERSION@
+
+/* libzeke minor api version number */
+#define LIBZEKE_MINOR_VERSION @LIBZEKE_REVISION@
+
+/* libzeke version string */
+#define LIBZEKE_VERSION @LIBZEKE_VERSION@
+
+#ifndef ZEKE_VERSION
+/* Zeke version number */
+#define ZEKE_VERSION "@ZEKE_VERSION@"
+#endif
+
+#endif /* _LIBZEKE_VERSION_H */

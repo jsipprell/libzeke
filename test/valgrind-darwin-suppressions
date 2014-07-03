@@ -1,0 +1,306 @@
+{
+   objc-1
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_calloc
+   fun:_objc_allocateFutureClass
+   fun:_CFRuntimeBridgeClasses
+   fun:__CFInitialize
+}
+{
+   objc-2
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc_zone_calloc
+   fun:_objc_allocateFutureClass
+   fun:_CFRuntimeBridgeClasses
+   fun:__CFInitialize
+}
+{
+   objc-3
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc_zone_malloc
+   fun:_CFRuntimeCreateInstance
+}
+{
+   objc-4
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:NXCreateMapTableFromZone
+}
+{
+   objc-5
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc_zone_memalign
+   fun:objc_autoreleasePoolPush
+   fun:call_load_methods
+   fun:load_images
+}
+{
+   objc-6
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc_zone_malloc
+   fun:__CFGetConverter
+}
+{
+   objc-7
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:malloc
+   fun:_Znwm
+   fun:_ZN4dyld37registerImageStateSingleChangeHandlerE17dyld_image_statesPFPKcS0_jPK15dyld_image_infoE
+   fun:dyld_register_image_state_change_handler
+   fun:libSystem_initializer
+}
+{
+   objc-8
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_strdup_internal
+   fun:__sel_registerName
+   fun:map_images_nolock
+   fun:map_images
+}
+{
+   objc-9
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:malloc
+   fun:_Znwm
+   fun:_ZNSt3__16vectorIPFPKc17dyld_image_statesjPK15dyld_image_infoENS_9allocatorIS8_EEE6insertENS_11__wrap_iterIPKS8_EERSD_
+   fun:_ZN4dyld37registerImageStateSingleChangeHandlerE17dyld_image_statesPFPKcS0_jPK15dyld_image_infoE
+   fun:dyld_register_image_state_change_handler
+}
+{
+   objc-10
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL17buildProtocolListP13category_listPK15protocol_list_tPS3_
+}
+{
+   objc-11
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_strdup_internal
+}
+{
+   objc-12
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc_zone_calloc
+   fun:_ZL27_fetchInitializingClassLista
+}
+{
+   objc-13
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXCreateMapTableFromZone
+}
+{
+   objc-14
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL17attachMethodListsP7class_tPP13method_list_tiaaPa
+}
+{
+   objc-15
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:__objc_sel_set_create
+}
+{
+   Generic indirect malloc_zone_malloc
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc_zone_malloc
+}
+{
+   Generic reachable malloc_zone_malloc
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+}
+{
+   Generic reachable malloc_zone_calloc
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_calloc
+}
+{
+   Generic reach-1
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXCreateMapTableFromZone
+}
+{
+   Generic reach-2
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXCreateHashTableFromZone
+}
+{
+   Generic double malloc
+   Memcheck:Leak
+   fun:malloc
+   fun:malloc
+}
+{
+   pthread at fork
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:pthread_atfork
+}
+{
+   reachable objc calloc
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:class_createInstance
+}
+{
+   xpc malloc
+   Memcheck:Leak
+   fun:malloc
+   fun:_xpc_malloc
+}
+{
+   strdup
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+}
+{
+   keymgr
+   Memcheck:Leak
+   fun:malloc
+   fun:get_or_create_key_element
+}
+{
+   vTable
+   Memcheck:Leak
+   fun:malloc
+   fun:_ZL12updateVtableP7class_ta
+}
+{
+   token_table_Add
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:token_table_add
+}
+{
+   token_table_Add2
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_nc_table_insert_type
+}
+{
+   token_table_1
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:__si_module_static_file_block_invoke_0
+}
+{
+   token_table_2
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:si_module_config_modules_for_category
+}
+{
+   token_table_3
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_nc_table_new
+   fun:__token_table_add_block_invoke_0
+   fun:_dispatch_client_callout
+}
+{
+   objc-block-1
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:__si_module_static_ds_block_invoke_0
+   fun:_dispatch_client_callout
+}
+{
+   objc-block-2
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_nc_table_insert_64
+}
+{
+   darwin-ds-1
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:ConnectToServer
+   fun:DNSServiceCreateConnection
+}
+{
+   darwin-ds-2
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:LI_ils_create
+   fun:_extract_user
+   fun:_ds_item
+   fun:ds_user_byuid
+}
+{
+   objc-block-3
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:__si_module_static_search_block_invoke_0
+   fun:_dispatch_client_callout
+}
+{
+   tz-1
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:tzload
+}
+{
+   objc-block-4
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_nc_table_new
+}
+{
+   objc-block-5
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:__si_module_static_cache_block_invoke_0
+   fun:_dispatch_client_callout
+}
+{
+   tz-2
+   Memcheck:Leak
+   fun:malloc
+   fun:tzsetwall_basic
+   fun:localtime_r
+   fun:log_message
+}
